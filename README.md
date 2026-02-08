@@ -1,4 +1,4 @@
-# Day 15 - Expense Tracker (Python)
+# Expense Tracker (Python)
 
 ## Description
 This project is a simple Expense Tracker application built using Python. It allows users to add daily expenses, view all recorded expenses, and calculate the total expense. The data is stored in a text file to maintain records between program runs.
