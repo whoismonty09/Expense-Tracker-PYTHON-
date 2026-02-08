@@ -1,62 +1,22 @@
-def add_expense():
-    date = input("Enter date (DD/MM/YYYY): ")
-    category = input("Enter category (Food, Travel, Shopping, etc): ")
-    amount = input("Enter amount: ")
+# Day 15 - Expense Tracker (Python)
 
-    with open("expenses.txt", "a") as file:
-        file.write(f"{date},{category},{amount}\n")
+## Description
+This project is a simple Expense Tracker application built using Python. It allows users to add daily expenses, view all recorded expenses, and calculate the total expense. The data is stored in a text file to maintain records between program runs.
 
-    print("Expense added successfully!")
+## Features
+- Add daily expense (date, category, amount)
+- View all expenses
+- Calculate total expense
+- File-based storage (expenses.txt)
+- Menu-driven command-line interface
 
+## Technologies Used
+- Python
+- File Handling
 
-def view_expenses():
-    try:
-        with open("expenses.txt", "r") as file:
-            expenses = file.readlines()
-
-        if not expenses:
-            print("No expenses found.")
-        else:
-            print("\n--- Expense List ---")
-            for exp in expenses:
-                date, category, amount = exp.strip().split(",")
-                print(f"Date: {date}, Category: {category}, Amount: ₹{amount}")
-
-    except FileNotFoundError:
-        print("No expenses file found.")
-
-
-def total_expense():
-    total = 0
-    try:
-        with open("expenses.txt", "r") as file:
-            for line in file:
-                date, category, amount = line.strip().split(",")
-                total += float(amount)
-
-        print(f"Total Expense: ₹{total}")
-
-    except FileNotFoundError:
-        print("No expenses file found.")
-
-
-while True:
-    print("\n--- Expense Tracker ---")
-    print("1. Add Expense")
-    print("2. View Expenses")
-    print("3. Total Expense")
-    print("4. Exit")
-
-    choice = input("Enter your choice (1-4): ")
-
-    if choice == "1":
-        add_expense()
-    elif choice == "2":
-        view_expenses()
-    elif choice == "3":
-        total_expense()
-    elif choice == "4":
-        print("Thank you for using Expense Tracker!")
-        break
-    else:
-        print("Invalid choice. Try again.")
+## How to Run
+1. Install Python on your system.
+2. Save the program as `main.py`.
+3. Make sure `expenses.txt` is in the same folder (it will be created automatically if not present).
+4. Open terminal or command prompt.
+5. Run the program using:
